@@ -8,12 +8,9 @@
 }
 
 .description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
+  display: flex;
+  flex-direction: column;
   font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
 }
@@ -35,7 +32,7 @@
 }
 
 .code {
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font-mono);
 }
 
@@ -131,6 +128,7 @@
 }
 
 /* Conic Gradient Animation */
+
 .thirteen::before {
   animation: 6s rotate linear infinite;
   width: 200%;
