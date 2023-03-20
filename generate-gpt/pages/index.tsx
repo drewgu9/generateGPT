@@ -18,7 +18,7 @@ export async function getStaticProps() {
 export default function Home({ res }) {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState<String>("");
-
+  const [valid, setValid] = useState(true);
 
   const cc = JSON.parse(res);
   const openai = new OpenAIApi(cc);
@@ -33,6 +33,7 @@ export default function Home({ res }) {
 
     } catch {
       console.log("Sorry, OpenAI denied your request. Please follow content policy.");
+      setValid(false);
     }
   }
 
@@ -46,13 +47,14 @@ export default function Home({ res }) {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
+          <h2>Generate an Image with OpenAI API</h2>
           <input placeholder="Type something to generate an image!"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}></input>
 
-          <button onClick={response}>Press me to test</button>
+          <button onClick={response}>Generate</button>
 
-          {image.length > 0 ? <img src={image as string} alt="image" /> : <></>}
+          {valid ? (image.length > 0 ? <img src={image as string} alt="image" /> : <></>) : <h2>Sorry, OpenAI denied your request. Please follow content policy.</h2>}
         </div>
       </main>
     </>

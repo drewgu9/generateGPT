@@ -2,33 +2,58 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: hsl(222, 14%, 10%);
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
 .description {
+  color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-size: 0.85rem;
   z-index: 2;
   font-family: var(--font-mono);
 }
 
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+.description * {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+.description input {
+  width: 100%;
+  height: 50px;
+  border-radius: 18px;
+  border: 2px solid;
+  font-size: large;
+  padding: 10px;
+}
+
+.description input::placeholder {
+  text-align: center;
+  font-size: large;
+}
+
+.description img {
+  margin-top: 20px;
+  width: 350px;
+}
+
+.description button {
+  border-radius: 18px;
+  width: 50%;
+  height: 50px;
+  font-size: larger;
+  color: white;
+  border: 2px solid white;
+  background-color: #4CAF50;
+}
+
+.description button:active {
+  background-color: #39833b;
 }
 
 .code {
